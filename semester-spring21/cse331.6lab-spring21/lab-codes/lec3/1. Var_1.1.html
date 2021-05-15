@@ -1,0 +1,70 @@
+<html>
+<head>
+       <title>source code: </title>
+       <meta name="description" content="source code">
+       <style>
+           a:link {text-decoration: none}
+           a:visited {text-decoration: none}
+           a:hover {text-decoration: none; color:#ff0000}
+       </style>
+</head>
+<body leftmargin=110  rightmargin=110 topmargin=20 bgcolor=#FFFFFF text=#000000 link=blue vlink=blue alink=blue>
+ 
+ 
+<!-- * -->
+ 
+ 
+
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=2 face="Terminal">
+.MODEL SMALL 
+.STACK 100H 
+.DATA 
+    NUMBER1 <font color=#000064>DB</font> 45H   <font color=#008000>; DB = define byte[8bit] | DW = define word[16bit] </font>
+    NUMBER2 <font color=#000064>DB</font> 35H   <font color=#008000>; 35h is the value which is declared to the number2 </font>
+    NUMBER3 <font color=#000064>DB</font> ?     <font color=#008000>; declaring blank variable </font>
+    NUMBER4 <font color=#000064>DB</font> ? 
+.CODE 
+    <font color=#0000FF>MOV</font> <font color=#C80000>AX</font>,@DATA     <font color=#008000>; load data segment to the AX register </font>
+    <font color=#0000FF>MOV</font> <font color=#800000>DS</font>,<font color=#C80000>AX</font>        <font color=#008000>; now move ax to the DS register because we can't copy anything directly in to DS aka Data Segment Register </font>
+     
+    <font color=#0000FF>ADD</font> NUMBER1,1  <font color=#008000>; ADD 1 TO THE NUMBER1 AND STORE IT TO THE NUMBER1 </font>
+    <font color=#0000FF>SUB</font> NUMBER2,1  <font color=#008000>; SUB 2 TO THE NUMBER1 AND STORE IT TO THE NUMBER2 </font>
+    <font color=#0000FF>ADD</font> NUMBER3,10 <font color=#008000>; NUMBER3 IS BLANK AND STORE THE VALUE OF THE SOURCE TO THE NUMBER3 VARIABLE  </font>
+     
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, NUMBER1 <font color=#008000>; MOVE NUMBER1'S DATA TO THE DL FOR O/P </font>
+    <font color=#0000FF>MOV</font> <font color=#C80000>AH</font>,2        <font color=#008000>; OUTPUT FUNCTION </font>
+    <font color=#0000FF>INT</font> 21H         <font color=#008000>; FUNCTION INTERRUPT   </font>
+     
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, 0DH     <font color=#008000>;CRET </font>
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, 0DH     <font color=#008000>;CRET </font>
+    <font color=#0000FF>INT</font> 21H 
+     
+    <font color=#0000FF>MOV</font> <font color=#C80000>AH</font>, 1       <font color=#008000>;INPUT </font>
+    <font color=#0000FF>INT</font> 21H          
+    <font color=#0000FF>MOV</font> NUMBER4,<font color=#C80000>AL</font>  <font color=#008000>;user input stored in AL and we move AL's value to the blank var name NUMBER4 </font>
+     
+     
+ 
+EXIT:                <font color=#008000>; Exit level </font>
+<font color=#0000FF>MOV</font> <font color=#C80000>AH</font>, 4CH 
+<font color=#0000FF>INT</font> 21H 
+</font></pre>
+<center> <font color=#FFFFFF>;</font> <a href="http://www.emu8086.com" target="_blank"><font face=verdana size=1 color=#000000> - asm2html - </font></a> </center>
+<!-- emu8086 version 4.08    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+ 
+ 
+<!-- *** -->
+ 
+ 
+</body>
+</html>

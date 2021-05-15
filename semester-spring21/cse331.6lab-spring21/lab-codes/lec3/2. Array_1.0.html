@@ -1,0 +1,87 @@
+<html>
+<head>
+       <title>source code: </title>
+       <meta name="description" content="source code">
+       <style>
+           a:link {text-decoration: none}
+           a:visited {text-decoration: none}
+           a:hover {text-decoration: none; color:#ff0000}
+       </style>
+</head>
+<body leftmargin=110  rightmargin=110 topmargin=20 bgcolor=#FFFFFF text=#000000 link=blue vlink=blue alink=blue>
+ 
+ 
+<!-- * -->
+ 
+ 
+
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=2 face="Terminal">
+.MODEL SMALL 
+.STACK 100H 
+.DATA  
+ 
+       
+    ELON_MASK <font color=#000064>DB</font> 9 DUP (?)  <font color=#008000>; 9 DUPLICATE SPACE FOR BLANK </font>
+     
+     
+.CODE       
+    <font color=#0000FF>MOV</font> <font color=#C80000>AX</font>,@DATA     <font color=#008000>; load data segment to the AX register </font>
+    <font color=#0000FF>MOV</font> <font color=#800000>DS</font>,<font color=#C80000>AX</font>        <font color=#008000>; now move ax to the DS register because we can't copy anything directly in to DS aka Data Segment Register </font>
+     
+     
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>0<font color=#0064C8>]</font>, <font color=#800080>'E'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>1<font color=#0064C8>]</font>, <font color=#800080>'L'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>2<font color=#0064C8>]</font>, <font color=#800080>'O'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>3<font color=#0064C8>]</font>, <font color=#800080>'N'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>4<font color=#0064C8>]</font>, 20h     <font color=#008000>; SPACE  </font>
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>5<font color=#0064C8>]</font>, <font color=#800080>'M'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>6<font color=#0064C8>]</font>, <font color=#800080>'A'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>7<font color=#0064C8>]</font>, <font color=#800080>'S'</font>  
+    <font color=#0000FF>MOV</font> ELON_MASK<font color=#0064C8>[</font>8<font color=#0064C8>]</font>, <font color=#800080>'K'</font> 
+     
+    <font color=#0000FF>MOV</font> <font color=#C80000>AH</font>, 2 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>0<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>1<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>2<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>3<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>4<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>5<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>6<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>7<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+    <font color=#0000FF>MOV</font> <font color=#C80000>DL</font>, ELON_MASK<font color=#0064C8>[</font>8<font color=#0064C8>]</font>  
+    <font color=#0000FF>INT</font> 21H 
+     
+     
+     
+     
+ 
+EXIT:                <font color=#008000>; Exit lebel </font>
+<font color=#0000FF>MOV</font> <font color=#C80000>AH</font>, 4CH 
+<font color=#0000FF>INT</font> 21H 
+</font></pre>
+<center> <font color=#FFFFFF>;</font> <a href="http://www.emu8086.com" target="_blank"><font face=verdana size=1 color=#000000> - asm2html - </font></a> </center>
+<!-- emu8086 version 4.08    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+ 
+ 
+<!-- *** -->
+ 
+ 
+</body>
+</html>
